@@ -1,0 +1,84 @@
+@import "../../App.scss";
+
+.home-page {
+  padding-left: 7rem;
+  width: 75vw;
+  display: flex;
+  flex-direction: column;
+
+  .text-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    img {
+      width: 20%;
+      border-radius: 50%;
+      margin-left: 200px;
+      box-shadow: 0 0 2px lightyellow;
+    }
+  }
+  .text-contact {
+    width: 100%;
+  }
+
+  h1 {
+    color: #fff;
+    font-size: 56px;
+    line-height: 53px;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  h2 {
+    color: #8d8d8d;
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 40px;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 0.5s backwards;
+  }
+
+  h3 {
+    color: #8d8d8d;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 3px;
+    animation: fadeIn 1s 0.5s backwards;
+  }
+
+  .flat-button {
+    color: $primary-color;
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-decoration: none;
+    padding: 10px 18px;
+    border: 1px solid $primary-color;
+    margin-top: 25px;
+    float: left;
+    animation: fadeInAnimation 1s 1.8s backwards;
+    white-space: nowrap;
+    width: fit-content;
+
+    &:hover {
+      background: $primary-color;
+      color: #333;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .home-page {
+    padding: 0;
+    .text-image {
+      flex-direction: column-reverse;
+      align-items: normal;
+      img {
+        margin-left: 0;
+      }
+    }
+  }
+}

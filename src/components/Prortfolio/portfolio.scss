@@ -1,0 +1,118 @@
+@import "../../App.scss";
+
+.portfolio-page {
+  width: 80%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  h2 {
+    margin-bottom: 0;
+    letter-spacing: 0.2px;
+  }
+  .images-carousel {
+    width: 60vw;
+    position: relative;
+
+    .container-images {
+      display: flex;
+      overflow: hidden;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+
+      .prev,
+      .next {
+        height: 30px;
+        cursor: pointer;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+
+      a.active {
+        color: red;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .images-carousel {
+      width: 90vw;
+    }
+  }
+  /*Carousel start*/
+  @keyframes carousel-animation {
+    0% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(-25%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    75% {
+      transform: translateX(-75%);
+    }
+  }
+  .carousel {
+    margin: 1rem auto;
+    padding: 1rem 0;
+    text-align: center;
+    overflow-x: hidden;
+    animation: fadeIn 1s 0.5s backwards;
+  }
+  .carousel .slides {
+    padding-left: 0;
+    width: 400%;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+    // animation: carousel-animation 6s ease-in-out 1.5s;
+  }
+  .carousel input {
+    display: none;
+  }
+  .carousel label {
+    display: inline-block;
+    width: 0.75rem;
+    height: 0.75rem;
+    border: medium solid black;
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 0 0.25rem;
+  }
+
+  #slide-1:checked ~ .slides {
+    transform: translateX(0%);
+  }
+  #slide-2:checked ~ .slides {
+    transform: translateX(-25%);
+  }
+  #slide-3:checked ~ .slides {
+    transform: translateX(-50%);
+  }
+  #slide-4:checked ~ .slides {
+    transform: translateX(-75%);
+  }
+
+  #slide-1:checked ~ .slides-nav label#dot-1,
+  #slide-2:checked ~ .slides-nav label#dot-2,
+  #slide-3:checked ~ .slides-nav label#dot-3,
+  #slide-4:checked ~ .slides-nav label#dot-4 {
+    background-color: white;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .portfolio-page {
+    justify-content: flex-start;
+  }
+}

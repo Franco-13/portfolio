@@ -1,0 +1,193 @@
+@import "../../App.scss";
+
+.nav-bar {
+  background: $black-color;
+  width: 5vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 3;
+
+  .sub-logo {
+    display: block;
+    padding: 2px 0;
+    width: 80%;
+    margin: 8px auto;
+    background: rgba(159, 153, 153, 0.216);
+    border-radius: 50%;
+    box-shadow: 0 0 5px 0px lightyellow;
+  }
+
+  nav {
+    display: block;
+    text-align: center;
+    width: 100%;
+
+    a {
+      font-size: 22px;
+      color: #4d4d4e;
+      display: block;
+      line-height: 51px;
+      height: 51px;
+      position: relative;
+      text-decoration: none;
+
+      svg {
+        transition: all 0.3s ease-in-out;
+      }
+
+      &:hover {
+        color: $primary-color;
+
+        svg {
+          opacity: 1;
+        }
+
+        &:after {
+          opacity: 1;
+          width: max-content;
+        }
+      }
+
+      &:after {
+        content: "";
+        left: 6vw;
+        font-size: 9px;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0;
+        display: block;
+        width: 100%;
+        // text-align: center;
+        opacity: 0;
+        -webkit-transition: all 0.3s ease-out;
+        transition: all 0.3s ease-out;
+      }
+
+      &:first-child {
+        &:after {
+          content: "INICIO";
+        }
+      }
+    }
+
+    a.portfolio-link {
+      &:after {
+        content: "PROYECTOS";
+      }
+    }
+
+    a.about-link {
+      &:after {
+        content: "SOBRE MI";
+      }
+    }
+
+    a.contact-link {
+      &:after {
+        content: "CONTACTO";
+      }
+    }
+
+    a.active {
+      svg {
+        color: #ffd700;
+      }
+    }
+  }
+
+  ul {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0;
+
+    li {
+      a {
+        padding: 7px 0;
+        display: block;
+        font-size: 15px;
+        line-height: 16px;
+        color: #4d4d4e;
+        height: 30px;
+
+        svg {
+          transition: all 0.3s ease-in-out;
+          height: 25px;
+        }
+
+        &:hover {
+          svg {
+            color: #ffd700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1025px) {
+  .nav-bar {
+    a {
+      &:hover {
+        &:after {
+          width: max-content;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .nav-bar {
+    width: 100vw;
+    height: 6vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    nav {
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+
+      a {
+        width: 25%;
+        &:hover {
+          color: $primary-color;
+
+          svg {
+            opacity: 0;
+          }
+
+          &:after {
+            opacity: 1;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+        &:after {
+          left: 0;
+        }
+      }
+    }
+
+    ul {
+      width: 20%;
+      display: flex;
+      justify-content: space-around;
+      bottom: 0;
+      position: relative;
+      li {
+        a {
+          display: inline;
+        }
+      }
+    }
+  }
+}

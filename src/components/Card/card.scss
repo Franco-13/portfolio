@@ -1,0 +1,76 @@
+@import "../../App.scss";
+
+.card-project {
+  .image-content {
+    width: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .image-portfolio {
+      width: 50vw;
+    }
+  }
+
+  .card-info {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    a {
+      text-decoration: none;
+      h3 {
+        font-size: 24px;
+        margin: 0;
+        letter-spacing: 0.1px;
+        border: 1px solid $primary-color;
+        width: fit-content;
+        text-align: center;
+        cursor: pointer;
+        color: $primary-color;
+        padding: 2px;
+      }
+    }
+    p {
+      margin: 15px 0;
+      letter-spacing: 0.1px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      span {
+        line-height: 1;
+        color: $orange-color;
+        font-size: 20px;
+        padding: 5px;
+        margin: 5px;
+        height: 20px;
+        border: 1px solid $orange-color;
+        border-radius: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .image-portfolio {
+      width: 90vw;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card-project {
+    width: 90vw;
+    height: 100%;
+
+    .image-content {
+      width: auto;
+
+      .image-portfolio {
+        width: 60vw;
+      }
+    }
+  }
+}
